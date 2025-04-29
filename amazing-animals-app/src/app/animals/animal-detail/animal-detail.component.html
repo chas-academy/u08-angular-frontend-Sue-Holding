@@ -1,15 +1,16 @@
 <p>animal-detail works!</p>
 
-<!-- <div *ngIf="isLoading">Loading animal details...</div>
+<div *ngIf="isLoading">Loading animal details...</div>
 <div *ngIf="error">{{ error }}</div>
 
-<div *ngIf="!isLoading && !error">
-    <h2>{{ animal.name }}</h2>
+<div *ngIf="!isLoading && !error && animal">
+  <h2>{{ animal.name }}</h2>
 
-    <ul>
-        <li><strong>Location:</strong> {{ animal.location }} </li>
-        <li><strong>Fun Fact:</strong> {{ animal.funfact }} </li>
-    </ul>
+  <ul>
+    <li><strong>Diet:</strong> {{ animal.diet }} </li>
+    <li><strong>Location:</strong> {{ animal.location }} </li>
+    <li><strong>Fun Fact:</strong> {{ animal.funFact }} </li>
+  </ul>
 
-    <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
-</div> -->
+  <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
+</div>

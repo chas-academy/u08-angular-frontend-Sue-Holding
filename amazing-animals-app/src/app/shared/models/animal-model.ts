@@ -4,6 +4,6 @@ export interface Animal {
     species: string;
     location: string;
     diet: string;
-    funfact: string;
+    funFact: string;
   }
   
