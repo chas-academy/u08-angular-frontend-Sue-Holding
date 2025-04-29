@@ -11,6 +11,7 @@ import { Animal } from '../../shared/models/animal-model';
   templateUrl: './animal-list.component.html',
   styleUrl: './animal-list.component.css'
 })
+
 export class AnimalListComponent implements OnInit {
   animals: Animal[] = [];
   isLoading = true;
@@ -25,6 +26,7 @@ export class AnimalListComponent implements OnInit {
   getAnimals(): void {
     this.animalService.getAnimals().subscribe({
       next: (data) => {
+        console.log('Animal list loaded:', this.animals);
         this.animals = data;
         this.isLoading = false;
       },

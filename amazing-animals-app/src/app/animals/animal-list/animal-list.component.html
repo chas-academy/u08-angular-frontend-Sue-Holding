@@ -1,1 +1,14 @@
 <p>animal-list works!</p>
+
+<h2>Animals</h2>
+
+<div *ngIf="isLoading">Loading animals...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<ul *ngIf="!isLoading && !error">
+    <li *ngFor="let animal of animals">
+        <strong>{{ animal.name }}</strong>
+        <a [routerLink]="['/animals', animal._id]">View Details</a>
+        <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
+    </li>
+</ul>

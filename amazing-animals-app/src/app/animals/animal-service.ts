@@ -13,8 +13,8 @@ export class AnimalService {
     return this.http.get<Animal[]>(`${this.apiUrl}/animals/getall`);
   }
 
-  getAnimal(id: string): Observable<Animal> {
-    return this.http.get<Animal>(`${this.apiUrl}/animals/get/${id}`);
+  getAnimal(_id: string): Observable<Animal> {
+    return this.http.get<Animal>(`${this.apiUrl}/animals/get/${_id}`);
   }
 
   createAnimal(animal: Animal): Observable<Animal> {
