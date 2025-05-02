@@ -1,6 +1,8 @@
-import { CommonModule, NgIf, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalService } from '../animal-service';
 import { Animal } from '../../shared/models/animal-model';
@@ -8,7 +10,7 @@ import { Animal } from '../../shared/models/animal-model';
 @Component({
   selector: 'app-animal-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgIf, NgFor],
+  imports: [CommonModule, FormsModule],
   templateUrl: './animal-form.component.html',
   styleUrl: './animal-form.component.css'
 })

@@ -1,10 +1,15 @@
 <p>animal-delete works!</p>
 
-<div *ngIf="isLoading">Loading...</div>
-<div *ngIf="error">{{ error }}</div>
+@if (isLoading) {
+    <div>Loading...</div>
+}
 
-<div *ngIf="!isLoading && !error && animal">
+@if (error) {
+    <div>{{ error }}</div>
+}
+
+@if (!isLoading && !error && animal) {
     <h2>Are you sure you want to delete {{ animal.name }}?</h2>
     <button (click)="confirmDelete()">Yes, delete</button>
     <button (click)="cancel()">Cancel</button>
-</div>
+}
