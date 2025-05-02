@@ -31,8 +31,10 @@ export class AnimalFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const url  = this.router.url;
     const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
+
+    if (url.includes('/edit') && id) {
       this.isEditMode = true;
       this.animalService.getAnimal(id).subscribe({
         next: (data) => {
@@ -46,12 +48,13 @@ export class AnimalFormComponent implements OnInit {
         }
       });
     } else {
+      this.isEditMode = false;
       this.isLoading = false;
     }
   }
 
   onSubmit(): void {
-    if ( this.isEditMode && this.animal._id) {
+    if (this.isEditMode && this.animal._id) {
       this.animalService.updateAnimal(this.animal._id, this.animal).subscribe({
         next: () => this.router.navigate(['/animals']),
         error: (err) => {
@@ -60,7 +63,10 @@ export class AnimalFormComponent implements OnInit {
         }
       });
     } else {
-      this.animalService.createAnimal(this.animal).subscribe({
+      const newAnimal = { ...this.animal };
+      delete newAnimal._id;
+
+      this.animalService.createAnimal(newAnimal).subscribe({
         next: () => this.router.navigate(['/animals']),
         error: (err) => {
           console.error('Failed to create animal:', err);

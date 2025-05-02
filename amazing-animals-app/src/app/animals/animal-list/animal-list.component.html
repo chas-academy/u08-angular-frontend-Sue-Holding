@@ -9,6 +9,6 @@
     <li *ngFor="let animal of animals">
         <strong>{{ animal.name }}</strong>
         <a [routerLink]="['/animals', animal._id]">View Details</a>
-        <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
+        <!-- <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a> -->
     </li>
 </ul>

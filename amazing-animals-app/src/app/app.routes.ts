@@ -10,25 +10,30 @@ export const routes: Routes = [
             import('./animals/animal-list/animal-list.component')
         .then(m => m.AnimalListComponent)
     },
+
+    { path: 'animals/create', 
+        loadComponent: () => 
+            import('./animals/animal-form/animal-form.component')
+        .then(m => m.AnimalFormComponent)
+    },
+
     { path: 'animals/:id', 
         loadComponent: () => 
             import('./animals/animal-detail/animal-detail.component')
         .then(m => m.AnimalDetailComponent)
     },
+
     { path: 'animals/:id/edit', 
         loadComponent: () => 
             import('./animals/animal-form/animal-form.component')
         .then(m => m.AnimalFormComponent)
     },
-    { path: 'create', 
-        loadComponent: () => 
-            import('./animals/animal-form/animal-form.component')
-        .then(m => m.AnimalFormComponent)
-    },
+    
     { path: 'animals/:id/delete',
         loadComponent: () => 
             import('./animals/animal-delete/animal-delete.component')
         .then(m => m.AnimalDeleteComponent)
     },
+    
     { path: '**', redirectTo: 'animals' },
 ];
