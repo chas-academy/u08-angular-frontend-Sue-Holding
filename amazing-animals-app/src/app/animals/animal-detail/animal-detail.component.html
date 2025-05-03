@@ -1,10 +1,13 @@
-<p>animal-detail works!</p>
+<!-- <p>animal-detail works!</p> -->
 
 <div *ngIf="isLoading">Loading animal details...</div>
 <div *ngIf="error">{{ error }}</div>
 
 <div *ngIf="!isLoading && !error && animal">
-  <h2>{{ animal.name }}</h2>
+<div class="animal-detail-header">
+  <h2 class="main-title">{{ animal.name }}</h2>
+  <button class="close-btn" (click)="clearAnimalDetail()">x</button>
+</div>
 
   <ul>
     <li><strong>Diet:</strong> {{ animal.diet }} </li>
@@ -12,6 +15,6 @@
     <li><strong>Fun Fact:</strong> {{ animal.funFact }} </li>
   </ul>
 
-  <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
-  <a [routerLink]="['/animals', animal._id, 'delete']">Delete Animal</a>
+  <a class="btn" [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
+  <a class=btn [routerLink]="['/animals', animal._id, 'delete']">Delete Animal</a>
 </div>

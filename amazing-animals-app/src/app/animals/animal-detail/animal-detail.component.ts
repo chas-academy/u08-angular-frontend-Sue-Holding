@@ -49,4 +49,8 @@ export class AnimalDetailComponent implements OnInit {
     this.isLoading = false;
   }
 }
+
+clearAnimalDetail() {
+  this.animal = null;
+}
 }

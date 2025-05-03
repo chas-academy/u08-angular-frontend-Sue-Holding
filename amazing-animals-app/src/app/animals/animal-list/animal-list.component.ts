@@ -37,4 +37,8 @@ export class AnimalListComponent implements OnInit {
       }
     });
   }
+
+  clearAnimalList() {
+    this.animals = [];
+  }
 }

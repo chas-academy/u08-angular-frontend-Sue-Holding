@@ -1,0 +1,42 @@
+.animal-list {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.animal-list li {
+    flex: 0 0 auto;
+}
+
+.animal-card {
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    gap: 0.5rem; /* space between name and button */
+    align-items: flex-start; /* align to left */
+    background: #f0f8ff; /* optional: light background */
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 150px; /* controls card width */
+}
+
+.animal-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.animal-list::-webkit-scrollbar-thumb {
+    background-color: #390DFF;
+    border-radius: 4px;
+}
+
+.animal-list::-webkit-scrollbar-track {
+    background: #A4F8B5;
+}
+
+.animal-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

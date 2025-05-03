@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+/* body {
+    font-family: 'Langar', sans-serif;
+  } */
+body {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 400; 
+    background: linear-gradient(to bottom, #A4F8B5, #3874F8);
+    background-image: url('./assets/map_of_the_world.svg');
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0; 
+  }
+
+.content {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    /* background-image: url('assets/map_of_the_world.svg');
+    background-position: center;
+    background-repeat: no-repeat; */
+
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 12px;
+}
+  
+h2, ul {
+    color: #390DFF
+}
+
+.btn {
+    background-color: #390DFF;
+    color: #A4F8B5;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+    .btn:hover {
+      color: #2c0ccf;
+      background-color: #A4F8B5;
+  }
+
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #390DFF;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  } 
+    .close-btn:hover {
+      color: #A4F8B5;
+  }
+
+  
