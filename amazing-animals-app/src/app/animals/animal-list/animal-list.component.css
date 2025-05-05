@@ -40,3 +40,30 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.search-animal {
+    color: #390DFF;
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem; 
+    padding: 1rem;
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+.search-animal label {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+.search-animal input {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Add a light border */
+    width: 100%; /* Full width of the form */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.btn {
+    margin-top: 0.5rem; 
+}

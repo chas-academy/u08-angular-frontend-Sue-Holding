@@ -4,6 +4,16 @@
     <button class="close-btn" (click)="clearAnimalList()">x</button>
 </div>
 
+<div class="search-animal">
+    <form (ngSubmit)="onSearch()" #searchForm="ngForm">
+        <label>
+            Search by animal name:
+            <input type="text" [(ngModel)]="searchName" name="searchName">
+        </label>
+        <button class="btn" type="submit">Search</button>
+    </form>
+</div>
+
 @if (isLoading) {
     <div>Loading animals...</div>
 }
@@ -12,17 +22,16 @@
 }
 @if (!isLoading && !error) {
     <div class="animal-list-container">
-    <ul class="animal-list">
-        @for (animal of animals; track animal._id)
-        {
-        <li>
-            <div class="animal-card">
-            <strong>{{ animal.name }}</strong>
-            <a class="btn" [routerLink]="['/animals', animal._id]">View Details</a>
-            <!-- <a [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a> -->
-            </div>
-        </li>
-    }
-    </ul>
+        <ul class="animal-list">
+            @for (animal of filteredAnimals; track animal._id)
+            {
+            <li>
+                <div class="animal-card">
+                    <strong>{{ animal.name }}</strong>
+                    <a class="btn" [routerLink]="['/animals', animal._id]">View Details</a>
+                </div>
+            </li>
+            }
+        </ul>
     </div>
 }
