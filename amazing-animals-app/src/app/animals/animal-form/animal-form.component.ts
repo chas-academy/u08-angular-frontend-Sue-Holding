@@ -81,4 +81,14 @@ export class AnimalFormComponent implements OnInit {
   cancel(): void {
     this.router.navigate(['/animals']);
   }
+
+  clearAnimalForm() {
+    this.animal = {
+      name: '',
+      diet: '',
+      location: '',
+      funFact: ''
+    };
+    this.router.navigate(['/animals']);
+  }
 }

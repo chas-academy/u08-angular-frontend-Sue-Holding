@@ -1,16 +1,19 @@
 <!-- <p>animal-form works!</p> -->
 
-<!-- @for (let condition of [true]) { -->
     @if (isLoading) {
         <div>Loading animal...</div>
     }
     @if (error) {
         <div>{{ error }}</div>
     }
-<!-- } -->
 
 @if (!isLoading && !error) {
     <form (ngSubmit)="onSubmit()" #animalForm="ngForm">
+    <div class="animal-form-header">
+        <h2>Create your new animal!</h2>
+        <button class="close-btn" (click)="clearAnimalForm()">x</button>
+    </div>
+
         <label>
             Name:
             <input type="text" [(ngModel)]="animal.name" name="name" required>
@@ -31,7 +34,7 @@
             <textarea [(ngModel)]="animal.funFact" name="funFact" required></textarea>
         </label>
 
-        <button type="submit" [disabled]="animalForm.invalid">Save</button>
-        <button type="button" (click)="cancel()">Cancel</button>
+        <button class="btn" type="submit" [disabled]="animalForm.invalid">Save</button>
+        <button class="btn" type="button" (click)="cancel()">Cancel</button>
     </form>
 }

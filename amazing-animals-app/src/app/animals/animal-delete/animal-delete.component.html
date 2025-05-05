@@ -10,6 +10,6 @@
 
 @if (!isLoading && !error && animal) {
     <h2>Are you sure you want to delete {{ animal.name }}?</h2>
-    <button (click)="confirmDelete()">Yes, delete</button>
-    <button (click)="cancel()">Cancel</button>
+    <button class="btn" (click)="confirmDelete()">Yes, delete</button>
+    <button class="btn" (click)="cancel()">Cancel</button>
 }

@@ -1,9 +1,15 @@
 <!-- <p>animal-detail works!</p> -->
 
-<div *ngIf="isLoading">Loading animal details...</div>
-<div *ngIf="error">{{ error }}</div>
+@if (isLoading) {
+  <div>Loading animal details...</div>
+}
+@if (error) {
+  <div>{{ error }}</div>
+}
 
-<div *ngIf="!isLoading && !error && animal">
+  @if (!isLoading && !error && animal) {
+    <div>
+
 <div class="animal-detail-header">
   <h2 class="main-title">{{ animal.name }}</h2>
   <button class="close-btn" (click)="clearAnimalDetail()">x</button>
@@ -16,5 +22,6 @@
   </ul>
 
   <a class="btn" [routerLink]="['/animals', animal._id, 'edit']">Edit Animal</a>
-  <a class=btn [routerLink]="['/animals', animal._id, 'delete']">Delete Animal</a>
+  <a class="btn" [routerLink]="['/animals', animal._id, 'delete']">Delete Animal</a>
 </div>
+  }

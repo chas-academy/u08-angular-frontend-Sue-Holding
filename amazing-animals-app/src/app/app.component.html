@@ -1,15 +1,16 @@
-<!-- <h1 class="main-title">Amazing Animals</h1> -->
 <nav class="navbar">
   <a routerLink="/animals" routerLinkActive="active-link">Search all Animals</a>
   <a routerLink="/animals/create" routerLinkActive="active-link">Create New Animal</a>
-  <a>AMAZING ANIMALS</a>
+  <a routerLink="/" routerLinkActive="active-link">AMAZING ANIMALS</a>
   <a>My Favourite Animals</a>
   <a>Play Game</a>
   <a>Log Out</a>
 </nav>
 
-<main class="content">
+<main class="background-image">
+<section class="content">
   <router-outlet></router-outlet>
+</section>
 </main>
 
 <footer class="footer">

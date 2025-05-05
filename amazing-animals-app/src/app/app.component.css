@@ -35,6 +35,7 @@
   .footer {
     background: #390DFF;
     color: #A4F8B5;
-    padding: 1rem;
+    padding-left: 1rem;
     display: flex;
+    font-size: 0.5rem;
   }

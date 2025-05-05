@@ -1,0 +1,41 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #A4F8B5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #390DFF;
+  }
+  
+  input,
+  textarea {
+    padding: 0.5rem;
+    background-color: aliceblue;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #390DFF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(57, 13, 255, 0.2);
+  }
+  
+  .animal-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
