@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AnimalService } from '../animal-service';
 import { Animal } from '../../shared/models/animal-model';
@@ -20,7 +20,10 @@ export class AnimalListComponent implements OnInit {
   isLoading = true;
   error: string | null = null;
   
-  constructor(private animalService: AnimalService) {}
+  constructor(
+    private animalService: AnimalService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getAnimals();
@@ -54,6 +57,6 @@ export class AnimalListComponent implements OnInit {
   
 
   clearAnimalList() {
-    this.animals = [];
+    this.router.navigate(['/']);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { AnimalService } from '../animal-service';
 import { Animal } from '../../shared/models/animal-model';
 
@@ -20,7 +20,8 @@ export class AnimalDetailComponent implements OnInit {
 
   constructor(
     private animalService: AnimalService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -51,6 +52,6 @@ export class AnimalDetailComponent implements OnInit {
 }
 
 clearAnimalDetail() {
-  this.animal = null;
+  this.router.navigate(['/']);
 }
 }

@@ -4,7 +4,14 @@ import { AnimalDetailComponent } from './animals/animal-detail/animal-detail.com
 import { AnimalFormComponent } from './animals/animal-form/animal-form.component';
 
 export const routes: Routes = [
-    { path: '',redirectTo: 'animals', pathMatch: 'full' },
+    // { path: '',redirectTo: 'animals', pathMatch: 'full' },
+
+    { path: '', 
+        loadComponent: () => 
+            import('./animals/animal-home/animal-home.component')
+          .then(m => m.AnimalHomeComponent) 
+    },
+      
     { path: 'animals', 
         loadComponent: () => 
             import('./animals/animal-list/animal-list.component')

@@ -89,6 +89,6 @@ export class AnimalFormComponent implements OnInit {
       location: '',
       funFact: ''
     };
-    this.router.navigate(['/animals']);
+    this.router.navigate(['/']);
   }
 }

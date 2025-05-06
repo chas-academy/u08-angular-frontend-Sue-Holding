@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GameService } from '../game-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -18,7 +19,10 @@ export class GameComponent implements OnInit {
   isLoading = false;
   error: string | null = null;
 
-  constructor(private gameService: GameService) {}
+  constructor(
+    private gameService: GameService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadGame();
@@ -60,7 +64,7 @@ export class GameComponent implements OnInit {
   }
 
   clearAnimalGame() {
-    this.playAgain();
+    this.router.navigate(['/']);
   }
 }
 
