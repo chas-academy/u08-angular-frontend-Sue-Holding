@@ -17,6 +17,12 @@ export const routes: Routes = [
         .then(m => m.AnimalFormComponent)
     },
 
+    { path: 'animals/game',
+        loadComponent: () => 
+            import('./animals/game/game.component')
+        .then(m => m.GameComponent)
+    },
+
     { path: 'animals/:id', 
         loadComponent: () => 
             import('./animals/animal-detail/animal-detail.component')
@@ -34,6 +40,6 @@ export const routes: Routes = [
             import('./animals/animal-delete/animal-delete.component')
         .then(m => m.AnimalDeleteComponent)
     },
-    
+
     { path: '**', redirectTo: 'animals' },
 ];

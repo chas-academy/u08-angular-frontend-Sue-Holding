@@ -1,0 +1,25 @@
+<!-- <p>game works!</p> -->
+
+@if (isLoading) {
+    <div>Loading game...</div>
+}
+@if (error) {
+    <div>{{ error }}</div>
+}
+@if (!isLoading && !error) {
+    <div class="game-container">
+        <div class="animal-game-header">
+            <h2>Guess the Animal!</h2>
+            <button class="close-btn" (click)="clearAnimalGame()">x</button>
+    </div>
+        <p><strong>Fun Fact: </strong>{{ funFact }}</p>
+
+        <input type="text" [(ngModel)]="guess" placeholder="Your guess here">
+        <button class="btn" (click)="submitGuess()">Submit Guess</button>
+
+        @if (result) {
+            <p>{{ result }}</p>
+            <button class="btn" (click)="playAgain()">Play Again</button>
+        }
+    </div>
+}
