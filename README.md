@@ -102,7 +102,7 @@ Susanna Holding
 
 📫 sue.holding55@gmail.com
 
-🔗 LinkedIn
+🔗 LinkedIn https://www.linkedin.com/in/susanna-holding-a4b14643/
 
 ## 📄 License
 
