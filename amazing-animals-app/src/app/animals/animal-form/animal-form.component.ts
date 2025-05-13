@@ -56,6 +56,19 @@ export class AnimalFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.error = null; // clears past error msgs
+    
+    // added trim () 
+  this.animal.name = this.animal.name.trim();
+  this.animal.diet = this.animal.diet?.trim() || '';
+  this.animal.location = this.animal.location.trim();
+  this.animal.funFact = this.animal.funFact.trim();
+
+  if (!this.animal.name || !this.animal.location || !this.animal.funFact) {
+    this.error = 'Name, location, and fun fact are required and cannot be empty.';
+    return;
+  }
+
     if (this.isEditMode && this.animal._id) {
       this.animalService.updateAnimal(this.animal._id, this.animal).subscribe({
         next: () => this.router.navigate(['/animals']),

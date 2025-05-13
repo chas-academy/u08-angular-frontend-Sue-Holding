@@ -3,8 +3,12 @@
     @if (isLoading) {
         <div>Loading animal...</div>
     }
-    @if (error) {
+    <!-- @if (error) {
         <div>{{ error }}</div>
+    } -->
+
+    @if (error) {
+        <div class="error-message">{{ error }}</div>
     }
 
 @if (!isLoading && !error) {
@@ -17,6 +21,9 @@
         <label>
             Name:
             <input type="text" [(ngModel)]="animal.name" name="name" required>
+            @if (name.invalid && (animal.name.dirty || animal.name.touched)) {
+                <div class="error-message">Name is required.</div>
+            }
         </label>
 
         <label>
