@@ -64,7 +64,7 @@ Main endpoints include:
 
 ### Clone the repo
 
-git clone https://github.com/YOUR_USERNAME/amazing-animals-angular.git
+git clone https://github.com/chas-academy/u08-angular-frontend-Sue-Holding.git
 
 cd amazing-animals-angular
 
