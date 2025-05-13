@@ -1,11 +1,31 @@
-<nav class="navbar">
+<!-- <nav class="navbar">
   <a routerLink="/animals" routerLinkActive="active-link">Search all Animals</a>
   <a routerLink="/animals/create" routerLinkActive="active-link">Create New Animal</a>
   <a routerLink="/" routerLinkActive="active-link">AMAZING ANIMALS</a>
   <a>My Favourite Animals</a>
   <a routerLink="/animals/game" routerLinkActive="active-link">Play Game</a>
   <a>Log Out</a>
+</nav> -->
+
+<nav class="navbar">
+  <div class="navbar-main">
+    <button class="hamburger" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
+      ☰
+    </button>
+    <a routerLink="/" routerLinkActive="active-link">AMAZING ANIMALS</a>
+    <div class="navbar-auth">
+      <a (click)="logout()">Log Out</a>
+    </div>
+  </div>
+
+  <div class="navbar-links" [class.open]="menuOpen">
+    <a routerLink="/animals" routerLinkActive="active-link" (click)="menuOpen = false">Search all Animals</a>
+    <a routerLink="/animals/create" routerLinkActive="active-link" (click)="menuOpen = false">Create New Animal</a>
+    <a>My Favourite Animals</a>
+    <a routerLink="/animals/game" routerLinkActive="active-link" (click)="menuOpen = false">Play Game</a>
+  </div>
 </nav>
+
 
 <main class="background-image">
 <section class="content">
