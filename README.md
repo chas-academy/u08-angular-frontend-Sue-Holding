@@ -60,8 +60,8 @@ Main endpoints include:
 | PUT             |  /animals/:id                |
 | DELETE          |  /animals/:id                |
 | GET             |  /animals/location/:location |
-| GET             |  /animals/game               |
-| POST            |  /animals/guess              |
+| GET             |  /animals/game/guess-funfact |
+| POST            |  /animals/game/check-guess   |
 
 ## 📦 Installation & Setup
 
@@ -86,6 +86,8 @@ The app should now be running at http://localhost:4200
 To get start with new features or work on existing ones you can easily find all components under src/app/animals along with the service files.
 
 - The game can be improved by removing the empty space in the text field when a user types in their guess to the fun fact, otherwise the game returns that the guess is wrong. The text input is also too wide on mobile view.
+
+- Continue adding Trim() and error messages to validation of input to the components on branch trim.
   
 - Alternatively a radio guess option could be added with a selection of wrong and the correct animal for the user to guess from.
 
